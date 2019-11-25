@@ -14,12 +14,12 @@ describe "Pets Controller" do
     end
 
     it "has a form with a radio buttons for existing owners" do
-      # @owner1 = Owner.create(:name => "Cricky")
-      # @owner2 = Owner.create(:name => "Chris")
+      @owner1 = Owner.create(:name => "Cricky")
+      @owner2 = Owner.create(:name => "Chris")
 
       visit '/pets/new'
-      # expect(page.has_unchecked_field?(@owner1.id)).to eq(true)
-      # expect(page.has_unchecked_field?(@owner2.id)).to eq(true)
+      expect(page.has_unchecked_field?(@owner1.id)).to eq(true)
+      expect(page.has_unchecked_field?(@owner2.id)).to eq(true)
     end
 
     it "has a field for creating a new owner" do
